@@ -1,0 +1,17 @@
+.App {
+	font-family: sans-serif;
+	text-align: center;
+}
+
+.header {
+	padding: 20px;
+	background-color: #80808021;
+}
+
+.issuesheader {
+	background-color: #80808038;
+}
+
+.issues {
+	padding: 100px;
+}
