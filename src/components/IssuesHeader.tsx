@@ -1,4 +1,4 @@
-import useGetRepoInfo from "./hooks/getRepoInfo";
+import useGetRepoInfo from "../hooks/getRepoInfo";
 
 export default function IssuesHeader() {
 	const { results, loading, error } = useGetRepoInfo(

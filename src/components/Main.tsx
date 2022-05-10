@@ -1,4 +1,4 @@
-import { useResultContext } from "./hooks/resultContext";
+import { useResultContext } from "../hooks/resultContext";
 import IssuesHeader from "./IssuesHeader";
 import ListItem from "./ListItem";
 import { v4 as uuid } from "uuid";

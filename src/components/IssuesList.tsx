@@ -1,7 +1,7 @@
 import "./styles.css";
 import Header from "./Header";
 import Main from "./Main";
-import useGetInfo from "./hooks/getInfo";
+import useGetInfo from "../hooks/getInfo";
 import { useCallback, useRef, useState } from "react";
 
 export default function Issueslist() {

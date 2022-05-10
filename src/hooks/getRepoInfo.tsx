@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
-import { useResultContext } from "./resultContext";
 
-export default function useGetInfo(url: string, pageNo?: number) {
+export default function useGetRepoInfo(url: string) {
 	const [error, setError] = useState<boolean>();
 	const [loading, setLoading] = useState<boolean>();
-	const [hasMore, setHasMore] = useState<boolean>();
-	const { results, setResults } = useResultContext();
+	const [results, setResults] = useState<any>({});
 
 	useEffect(() => {
 		setLoading(true);
 		setError(false);
 		try {
-			fetch(`${url}?page=${pageNo}&per_page=20`)
+			fetch(url)
 				.then((res) => {
 					if (!res.ok) {
 						setError(true);
@@ -22,17 +20,16 @@ export default function useGetInfo(url: string, pageNo?: number) {
 				})
 				.then((data) => {
 					setResults(data);
-					setHasMore(data.length > 0);
 					setLoading(false);
 				});
 		} catch (error) {
 			console.log(error);
 		}
-	}, [pageNo, url]);
+	}, [url]);
 
 	useEffect(() => {
-		setResults([]);
+		setResults({});
 	}, []);
 
-	return { loading, error, results, hasMore };
+	return { loading, results, error };
 }
